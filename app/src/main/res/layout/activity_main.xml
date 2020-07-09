@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/activity_main"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#AB69C8">
+
+    <com.example.practice4.MyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="سلام"
+        android:layout_gravity="center"
+        android:textSize="40dp"
+        />
+        <com.example.practice4.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ولی جعفری اقدم"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            />
+        <com.example.practice4.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="تمرین 4"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            />
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:src="@drawable/aa"
+            android:layout_gravity="right"
+            ></ImageView>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/Dr"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="right"
+
+        android:background="#A1E47D">
+<Button
+    android:layout_margin="5dp"
+    android:layout_width="200dp"
+    android:layout_height="31dp"
+    android:layout_gravity="center"
+    android:background="#7BEF94"
+    android:text="پخش فیلم"
+    android:textColor="#070BCF"
+    android:textSize="20sp"
+    android:id="@+id/btnVideoView"
+    ></Button>
+        <Button
+            android:layout_margin="5dp"
+            android:layout_width="200dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center"
+            android:background="#7BEF94"
+            android:text="سایت آپارات"
+            android:textColor="#070BCF"
+            android:textSize="20sp"
+            android:id="@+id/btnWebView"
+            ></Button>
+        <Button
+            android:layout_margin="5dp"
+            android:layout_width="200dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center"
+            android:background="#7BEF94"
+            android:text="تماس"
+            android:textColor="#070BCF"
+            android:textSize="20sp"
+            android:id="@+id/btnCall"
+            ></Button>
+
+
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

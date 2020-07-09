@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ProfileActivity">
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="لطفا نام و نام خانودگی خود را وارد کنید."
+
+        android:textColorHint="#FF0000"
+        android:gravity="center"
+        android:layout_gravity="clip_horizontal"
+        android:layout_marginTop="10dp"
+        />
+    <!--android:inputType="textPersonName"-->
+
+
+    <EditText
+    android:id="@+id/age"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:hint="لطفا شماره سن خود را وارد کنید."
+    android:inputType="number"
+    android:maxLength="2"
+    android:textColorHint="#FF0000"
+    android:gravity="center"
+    android:layout_gravity="clip_horizontal"
+        android:layout_marginTop="10dp"
+    />
+    <EditText
+    android:id="@+id/email"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:hint="لطفا شماره ایمیل خود را وارد کنید."
+    android:inputType="textWebEmailAddress"
+    android:textColorHint="#FF0000"
+    android:gravity="center"
+    android:layout_gravity="clip_horizontal"
+        android:layout_marginTop="10dp"
+    />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#7BEF94"
+            android:text="ویرایش"
+            android:textColor="#070BCF"
+            android:textSize="20sp"
+            android:id="@+id/btnEdit"
+            ></Button>
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#7BEF94"
+            android:text="ذخیره"
+            android:textColor="#070BCF"
+            android:textSize="20sp"
+            android:id="@+id/btnSave"
+            ></Button>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
