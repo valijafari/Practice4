@@ -14,6 +14,16 @@
         android:orientation="vertical"
         android:background="#AB69C8">
 
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_marginTop="20dp"
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ham1"
+            android:layout_gravity="right"
+            ></ImageView>
+
+
     <com.example.practice4.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,13 +45,7 @@
             android:layout_gravity="center"
             android:textSize="20dp"
             />
-        <ImageView
-            android:id="@+id/imgProfile"
-            android:layout_width="35dp"
-            android:layout_height="30dp"
-            android:src="@drawable/aa"
-            android:layout_gravity="right"
-            ></ImageView>
+
 
 
     </LinearLayout>

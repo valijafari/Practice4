@@ -17,7 +17,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class ProfileActivity extends AppCompatActivity {
-    public boolean FlageEdit=false;
+    public boolean FlageEdit = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +26,7 @@ public class ProfileActivity extends AppCompatActivity {
         EditText name = findViewById(R.id.name);
         EditText email = findViewById(R.id.email);
         EditText age = findViewById(R.id.age);
-        FlageEdit=false;
+        FlageEdit = false;
 
 
         if (getage() != 0) {
@@ -44,35 +45,32 @@ public class ProfileActivity extends AppCompatActivity {
         btnedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               if (FlageEdit==false)
-               {
-                   EditText name = findViewById(R.id.name);
-                   EditText email = findViewById(R.id.email);
-                   EditText age = findViewById(R.id.age);
-                   name.setEnabled(true);
-                   email.setEnabled(true);
-                   age.setEnabled(true);
+                if (FlageEdit == false) {
+                    EditText name = findViewById(R.id.name);
+                    EditText email = findViewById(R.id.email);
+                    EditText age = findViewById(R.id.age);
+                    name.setEnabled(true);
+                    email.setEnabled(true);
+                    age.setEnabled(true);
 
-                   name.setText(null);
-                   email.setText(null);
-                   age.setText(null);
-                  // btnedit.setEnabled(false);
+                    name.setText(null);
+                    email.setText(null);
+                    age.setText(null);
+                    // btnedit.setEnabled(false);
 
-                  // btnSave.setEnabled(true);
-                   btnedit.setBackgroundColor(Color.GREEN);
-                   btnSave.setBackgroundColor(Color.GRAY);
-                   FlageEdit=true;
-               }
-               else if (FlageEdit==true)
-               {
-                   Toast.makeText(ProfileActivity.this, "لطفا اطلاعات خود را وارد کرده >دخیره< را تاچ کنید.", Toast.LENGTH_LONG).show();
-               }
+                    // btnSave.setEnabled(true);
+                    btnedit.setBackgroundColor(Color.GREEN);
+                    btnSave.setBackgroundColor(Color.GRAY);
+                    FlageEdit = true;
+                } else if (FlageEdit == true) {
+                    Toast.makeText(ProfileActivity.this, "لطفا اطلاعات خود را وارد کرده >ذخیره< را تاچ کنید.", Toast.LENGTH_LONG).show();
+                }
 
 
             }
         });
 
-        if (getEmail() != "No Email provided!") {
+       /* if (getEmail() != "No Email provided!") {
             // btnSave.setEnabled(false);
             if  (FlageEdit==false)
             {
@@ -87,14 +85,28 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
 
+        }*/
+        if (FlageEdit == false) {
+            if (getEmail() != "No Email provided!") {
+                Toast.makeText(ProfileActivity.this, "اطلاعات شما قبلا ذخیره شده است.", Toast.LENGTH_LONG).show();
+                name.setEnabled(false);
+                email.setEnabled(false);
+                age.setEnabled(false);
+                btnedit.setBackgroundColor(Color.GRAY);
+                btnSave.setBackgroundColor(Color.GREEN);
+            }
+            else
+            {
+                btnedit.setBackgroundColor(Color.GREEN);
+                btnSave.setBackgroundColor(Color.GRAY);
+            }
         }
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (getEmail() != "No Email provided!") {
                     // btnSave.setEnabled(false);
-                    if  (FlageEdit==false)
-                    {
+                    if (FlageEdit == false) {
                         Toast.makeText(ProfileActivity.this, "اطلاعات شما قبلا ذخیره شده است.", Toast.LENGTH_LONG).show();
                         return;
                     }
@@ -121,16 +133,17 @@ public class ProfileActivity extends AppCompatActivity {
                 } else {
                     saveEmail(email.getText().toString());
                     String names = getName();
+                    Toast.makeText(ProfileActivity.this, "اطلاعات شما با موفقیت ذخیره شد.", Toast.LENGTH_LONG).show();
                     showNotification("اطلاعات شما با موفقیت ذخیره شد.", names + " اطلاعات شما با موفقیت در نرم افزار ما با موفقیت ذخیره شد. ");
                     name.setEnabled(false);
                     email.setEnabled(false);
                     age.setEnabled(false);
 
-                   // btnedit.setEnabled(true);
+                    // btnedit.setEnabled(true);
                     //btnSave.setEnabled(false);
                     btnSave.setBackgroundColor(Color.GREEN);
                     btnedit.setBackgroundColor(Color.GRAY);
-                    FlageEdit=true;
+                    FlageEdit = true;
 
                 }
 
@@ -139,40 +152,40 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     void saveName(String name) {
-        getSharedPreferences("prefsnew2", Context.MODE_PRIVATE)
+        getSharedPreferences("prefsnew3", Context.MODE_PRIVATE)
                 .edit()
                 .putString("name", name)
                 .apply();
     }
 
     void saveAge(int age) {
-        getSharedPreferences("prefsnew2", Context.MODE_PRIVATE)
+        getSharedPreferences("prefsnew3", Context.MODE_PRIVATE)
                 .edit()
                 .putInt("age", age)
                 .apply();
     }
 
     void saveEmail(String Email) {
-        getSharedPreferences("prefsnew2", Context.MODE_PRIVATE)
+        getSharedPreferences("prefsnew3", Context.MODE_PRIVATE)
                 .edit()
                 .putString("Email", Email)
                 .apply();
     }
 
     String getName() {
-        String name = getSharedPreferences("prefsnew2", Context.MODE_PRIVATE)
+        String name = getSharedPreferences("prefsnew3", Context.MODE_PRIVATE)
                 .getString("name", "No Name provided!");
         return name;
     }
 
     int getage() {
-        int age = getSharedPreferences("prefsnew2", Context.MODE_PRIVATE)
+        int age = getSharedPreferences("prefsnew3", Context.MODE_PRIVATE)
                 .getInt("age", 0);
         return age;
     }
 
     String getEmail() {
-        String Email = getSharedPreferences("prefsnew2", Context.MODE_PRIVATE)
+        String Email = getSharedPreferences("prefsnew3", Context.MODE_PRIVATE)
                 .getString("Email", "No Email provided!");
         return Email;
     }
@@ -190,7 +203,7 @@ public class ProfileActivity extends AppCompatActivity {
         }
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(ProfileActivity.this, "YOUR_CHANNEL_ID")
-                .setSmallIcon(R.drawable.aa) // notification icon
+                .setSmallIcon(R.drawable.save) // notification icon
                 .setContentTitle(title) // title for notification
                 .setContentText(message)// message for notification
                 .setAutoCancel(true); // clear notification after click
