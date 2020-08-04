@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Practice4</string>
+    <string name="app_name">Vali Jafari (Practice4-5-6)</string>
+    <string name="type">Type:</string>
+    <string name="lat">Lat:</string>
+    <string name="lng">Lng:</string>
+    <string name="bearing">Bearing:</string>
 </resources>
